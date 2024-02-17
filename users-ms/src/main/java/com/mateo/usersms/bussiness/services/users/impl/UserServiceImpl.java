@@ -15,8 +15,8 @@ public class UserServiceImpl implements IUserService {
     private final IUserRepository userRepository;
 
 
-    public User loadUserByUsername(String username) {
-        var userOptional = userRepository.findByUsername(username);
+    public User loadUserByUsername(String email) {
+        var userOptional = userRepository.findByEmail(email);
         if (userOptional.isPresent())
             return userOptional.get();
         throw new RuntimeException("user not found");
