@@ -29,10 +29,10 @@ public class UserFacadeImpl implements IUserFacade {
         user.setAlias(alias);
         user.setCvu(cvu);
 
-        //
-
         //save user on db
         userService.saveUser(user);
+
+        //publish event on rabbit with user data
         //save user on IAM (keycloak)
 
         return null;
