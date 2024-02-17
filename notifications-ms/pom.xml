@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mateo</groupId>
-	<artifactId>notification-ms</artifactId>
+	<artifactId>notifications-ms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>notification-ms</name>
+	<name>notifications-ms</name>
 	<description>notification service of CashCloud</description>
 	<properties>
 		<java.version>17</java.version>

@@ -1,10 +1,10 @@
-package com.mateo.notificationms;
+package com.mateo.notificationsms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotificationMsApplicationTests {
+class NotificationsMsApplicationTests {
 
 	@Test
 	void contextLoads() {
