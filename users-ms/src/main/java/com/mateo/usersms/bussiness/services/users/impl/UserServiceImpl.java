@@ -23,7 +23,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void saveUser(User user) {
-
+    public Long saveUser(User user) {
+        return null;
     }
 }

@@ -23,6 +23,7 @@ public class SecurityConfiguration {
                         .anyRequest().authenticated()
                 )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .csrf(csrf -> csrf.disable())
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt
                                 .jwkSetUri("http://localhost:8080/realms/CashCloud_realm/protocol/openid-connect/certs")

@@ -1,11 +1,13 @@
 package com.mateo.usersms.bussiness.facades.Impl;
 
+import com.mateo.usersms.bussiness.broker_pusblishers.IBrokerPublisher;
 import com.mateo.usersms.bussiness.facades.IUserFacade;
 import com.mateo.usersms.bussiness.mappers.IUserMapper;
+import com.mateo.usersms.bussiness.services.keycloak.IKeycloakAuthService;
 import com.mateo.usersms.bussiness.services.users.IUserService;
 import com.mateo.usersms.bussiness.services.users.alias.IAliasGeneratorService;
 import com.mateo.usersms.bussiness.services.users.cvu.ICvuGeneratorService;
-import com.mateo.usersms.model.dtos.SaveUserDto;
+import com.mateo.usersms.model.dtos.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -16,25 +18,54 @@ public class UserFacadeImpl implements IUserFacade {
     private final IUserMapper<SaveUserDto> userMapper;
     private final IAliasGeneratorService aliasGeneratorService;
     private final ICvuGeneratorService cvuGeneratorService;
-
+    private final IBrokerPublisher<UserEmailDataDto> brokerPublisher;
+    private final IKeycloakAuthService keycloakAuthService;
     @Override
-    public String registerUser(SaveUserDto saveUserDto) {
-        var user = userMapper.toUser(saveUserDto);
-        //generate alias
-        var alias = aliasGeneratorService.generateAlias();
-        //generate cvu
-        var cvu = cvuGeneratorService.generateCvu();
-        //generate and set user's roles
+    public UserRegistrationResponseDto registerUser(SaveUserDto saveUserDto) {
 
+        //save user on IAM (keycloak)
+        keycloakAuthService.registerNewUserOnKeycloak(saveUserDto);
+
+        var user = userMapper.toUser(saveUserDto);
+
+        //generate and set alias
+        var alias = aliasGeneratorService.generateAlias();
         user.setAlias(alias);
+
+        //generate and set cvu
+        var cvu = cvuGeneratorService.generateCvu();
         user.setCvu(cvu);
 
+
         //save user on db
-        userService.saveUser(user);
+        var userId = userService.saveUser(user);
+
 
         //publish event on rabbit with user data
-        //save user on IAM (keycloak)
+        brokerPublisher.publish(new UserEmailDataDto(
+                saveUserDto.firstName(),
+                saveUserDto.lastName(),
+                saveUserDto.email())
+        );
 
-        return null;
+        var response = new UserRegistrationResponseDto(
+                userId,
+                saveUserDto.firstName(),
+                saveUserDto.lastName(),
+                saveUserDto.identificationCard(),
+                saveUserDto.email(),
+                saveUserDto.phoneNumber(),
+                cvu,alias
+        );
+
+        return response;
     }
+
+    @Override
+    public UserAuthenticatedResponseDto authenticateUser(UserAuthenticationRequestDto userAuthenticationRequestDto) {
+        var response = keycloakAuthService.authenticateUser(userAuthenticationRequestDto);
+        return response;
+    }
+
+
 }

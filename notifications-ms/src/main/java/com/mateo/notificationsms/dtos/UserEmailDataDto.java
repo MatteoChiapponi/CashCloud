@@ -1,9 +1,10 @@
 package com.mateo.notificationsms.dtos;
 
-public record NewUserInfo(
+import java.io.Serializable;
+
+public record UserEmailDataDto(
         String firstName,
         String lastName,
-        String email,
-        String phoneNumber
-) {
+        String email
+) implements Serializable {
 }

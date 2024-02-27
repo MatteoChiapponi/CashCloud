@@ -2,5 +2,5 @@ package com.mateo.notificationsms.bussiness.services;
 
 public interface IMailSenderService<T> {
 
-    void sendEmail(T information);
+    void sendEmail(String to, String subject,T content);
 }

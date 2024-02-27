@@ -11,7 +11,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
-    private UserRole userRole;
+
     private String identificationCard;
     private String email;
     private String phoneNumber;
@@ -34,5 +34,9 @@ public class User {
 
     public void setAlias(String alias) {
         this.alias = alias;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

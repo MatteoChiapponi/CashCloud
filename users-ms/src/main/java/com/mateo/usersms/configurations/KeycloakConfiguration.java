@@ -4,7 +4,6 @@ import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
 import org.keycloak.admin.client.resource.RealmResource;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,28 +11,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "keycloak")
 public class KeycloakConfiguration {
-    @Value("${keycloak.realm}")
-    private String realm;
-    @Value("${keycloak.serverUrl}")
-    private String serverUrl;
-    @Value("${keycloak.clientId}")
-    private String clientId;
-    @Value("${keycloak.clientSecret}")
-    private String clientSecret;
 
 
     @Bean
     public RealmResource getRealm() {
-        return getInstance().realm(realm);
+        return getInstance().realm("CashCloud_realm");
     }
 
     @Bean
     public Keycloak getInstance() {
         return KeycloakBuilder.builder()
-                .serverUrl(serverUrl)
-                .realm(realm)
-                .clientId(clientId)
-                .clientSecret(clientSecret)
+                .serverUrl("http://localhost:8080")
+                .realm("CashCloud_realm")
+                .clientId("api-users-ms")
+                .clientSecret("AQCgcVjKkkC38wDILaNnLYtIObFUFbMf")
                 .grantType(OAuth2Constants.CLIENT_CREDENTIALS)
                 .build();
     }
