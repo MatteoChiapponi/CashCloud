@@ -1,18 +1,18 @@
 package com.mateo.usersms.services.users.alias;
 
-import com.mateo.usersms.bussiness.services.users.alias.Impl.AliasGeneratorService;
+import com.mateo.usersms.bussiness.services.users.alias.Impl.AliasGeneratorServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AliasGeneratorServiceTest {
+class AliasGeneratorServiceImplTest {
 
     @Autowired
-    private AliasGeneratorService aliasGeneratorService;
+    private AliasGeneratorServiceImpl aliasGeneratorServiceImpl;
 
     @Test
     void testAlias() {
-        System.out.println(aliasGeneratorService.getAlias());
+        System.out.println(aliasGeneratorServiceImpl.generateAlias());
     }
 }

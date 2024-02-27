@@ -8,30 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AliasGeneratorService implements IAliasGeneratorService {
-    private String alias;
+public class AliasGeneratorServiceImpl implements IAliasGeneratorService {
     private final IRandomWordGenerator randomWordGenerator;
     private final IUserValidationService userValidationService;
-
-    public String getAlias() {
-        if (alias == null)
-            generateAliass();
-        return alias;
-    }
-    private void generateAliass(){
-        var currentAlias = "";
-        for (int i = 0; i < 3; i++) {
-            currentAlias+= randomWordGenerator.generateRandomWord() + ".";
-        }
-        var finalAlias = currentAlias.substring(0,currentAlias.length()-1);
-        alias = finalAlias;
-        /*if (userValidationService.isAliasAvailable(finalAlias)){
-            alias = finalAlias;
-            return;
-        }
-        generateAlias();
-         */
-    }
 
     // hacer inversion de dependencia y testear el metodo
     @Override
