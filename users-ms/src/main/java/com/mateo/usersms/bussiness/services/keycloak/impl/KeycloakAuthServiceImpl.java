@@ -1,12 +1,12 @@
 package com.mateo.usersms.bussiness.services.keycloak.impl;
 
 import com.mateo.usersms.bussiness.services.keycloak.IKeycloakAuthService;
+import com.mateo.usersms.bussiness.services.keycloak.IKeycloakService;
 import com.mateo.usersms.model.dtos.SaveUserDto;
 import com.mateo.usersms.model.dtos.UserAuthenticatedResponseDto;
 import com.mateo.usersms.model.dtos.UserAuthenticationRequestDto;
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
-import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
@@ -16,10 +16,9 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class KeycloakAuthService implements IKeycloakAuthService {
+public class KeycloakAuthServiceImpl implements IKeycloakAuthService {
+    private final IKeycloakService keycloakService;
     private final RealmResource realmResource;
-
-    private final Keycloak keycloak;
     @Override
     public void registerNewUserOnKeycloak(SaveUserDto saveUserDto) {
 
@@ -45,18 +44,28 @@ public class KeycloakAuthService implements IKeycloakAuthService {
 
         Response response = realmResource.users().create(userRepresentation);
 
+        // manejar exceptions
+        System.out.println(response.getStatus());
+
+        keycloakService.sendVerificationEmail(saveUserDto.email());
+
     }
 
     @Override
     public UserAuthenticatedResponseDto authenticateUser(UserAuthenticationRequestDto userAuthenticationRequestDto) {
 
         var keycloakUser = Keycloak.getInstance("http://localhost:8080","CashCloud_realm",userAuthenticationRequestDto.email(), userAuthenticationRequestDto.password(), "api-users-ms", "AQCgcVjKkkC38wDILaNnLYtIObFUFbMf");
+
         var userTokenManager = keycloakUser.tokenManager();
 
+        // 400 contraseña incorrecta
         var response = new UserAuthenticatedResponseDto(
                 userTokenManager.getAccessTokenString(),
                 userTokenManager.refreshToken().getRefreshToken()
         );
         return response;
     }
+
 }
+
+

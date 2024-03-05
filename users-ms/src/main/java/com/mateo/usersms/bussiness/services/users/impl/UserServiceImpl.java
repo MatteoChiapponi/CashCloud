@@ -24,6 +24,14 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public Long saveUser(User user) {
-        return null;
+        var response = userRepository.save(user);
+        return response.getId();
     }
+
+    @Override
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
+
+
 }

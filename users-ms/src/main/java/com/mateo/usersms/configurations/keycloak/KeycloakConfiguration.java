@@ -1,4 +1,4 @@
-package com.mateo.usersms.configurations;
+package com.mateo.usersms.configurations.keycloak;
 
 import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;

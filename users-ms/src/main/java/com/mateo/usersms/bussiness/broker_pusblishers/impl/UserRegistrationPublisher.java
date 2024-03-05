@@ -17,4 +17,5 @@ public class UserRegistrationPublisher implements IBrokerPublisher<UserEmailData
         rabbitTemplate.convertAndSend("users_exchange","new.user.registered", message);
         System.out.println("mensaje publicado");
     }
+
 }

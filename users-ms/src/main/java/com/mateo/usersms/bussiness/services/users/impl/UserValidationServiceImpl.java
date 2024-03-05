@@ -20,9 +20,4 @@ public class UserValidationServiceImpl implements IUserValidationService {
         return !userRepository.existsByCvu(cvu);
     }
 
-    @Override
-    public boolean isEmailAvailable(String email) {
-        return !userRepository.existsByEmail(email);
-    }
-
 }

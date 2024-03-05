@@ -1,7 +1,7 @@
 package com.mateo.usersms.bussiness.facades.Impl;
 
 import com.mateo.usersms.bussiness.broker_pusblishers.IBrokerPublisher;
-import com.mateo.usersms.bussiness.facades.IUserFacade;
+import com.mateo.usersms.bussiness.facades.IUserOpenFacade;
 import com.mateo.usersms.bussiness.mappers.IUserMapper;
 import com.mateo.usersms.bussiness.services.keycloak.IKeycloakAuthService;
 import com.mateo.usersms.bussiness.services.users.IUserService;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserFacadeImpl implements IUserFacade {
+public class UserOpenFacadeImpl implements IUserOpenFacade {
     private final IUserService userService;
     private final IUserMapper<SaveUserDto> userMapper;
     private final IAliasGeneratorService aliasGeneratorService;
@@ -40,7 +40,6 @@ public class UserFacadeImpl implements IUserFacade {
         //save user on db
         var userId = userService.saveUser(user);
 
-
         //publish event on rabbit with user data
         brokerPublisher.publish(new UserEmailDataDto(
                 saveUserDto.firstName(),
@@ -63,6 +62,10 @@ public class UserFacadeImpl implements IUserFacade {
 
     @Override
     public UserAuthenticatedResponseDto authenticateUser(UserAuthenticationRequestDto userAuthenticationRequestDto) {
+        var exists = userService.existsByEmail(userAuthenticationRequestDto.email());
+        if (!exists)
+            throw new RuntimeException("user not found");
+
         var response = keycloakAuthService.authenticateUser(userAuthenticationRequestDto);
         return response;
     }
