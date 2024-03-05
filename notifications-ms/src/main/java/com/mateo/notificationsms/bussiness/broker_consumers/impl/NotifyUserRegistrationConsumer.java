@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class NotifyUserRegistrationConsumer implements IBrokerConsumer<UserEmailDataDto> {
-
-    private final IMailSenderService<UserEmailDataDto> mailSenderService;
     private final INotifyService<UserEmailDataDto> notifyService;
     Logger logger = LoggerFactory.getLogger(NotifyUserRegistrationConsumer.class);
 
