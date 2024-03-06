@@ -2,6 +2,7 @@ package com.cashcloud.keycloakmanagerms.bussiness.services.broker_consumers.impl
 
 import com.cashcloud.keycloakmanagerms.bussiness.services.broker_consumers.IBrokerConsumer;
 import com.cashcloud.keycloakmanagerms.bussiness.dtos.UserDataToRegisterInKeycloak;
+import com.cashcloud.keycloakmanagerms.bussiness.services.keycloak.IKeycloakService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +16,13 @@ public class registerUserOnKeycloakConsumer implements IBrokerConsumer<UserDataT
 
     Logger logger = LoggerFactory.getLogger(registerUserOnKeycloakConsumer.class);
 
+    private final IKeycloakService keycloakService;
+
     @Override
     @RabbitListener(queues = "register_user_on_keycloak")
     public void consume(@Payload UserDataToRegisterInKeycloak message) {
         logger.info("nuevo usuario para registrar: "+ message.email() + message.firstName() + message.lastName());
+        keycloakService.registerNewUserOnKeycloak(message);
     }
 
 

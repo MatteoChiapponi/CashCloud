@@ -20,17 +20,10 @@ import java.util.List;
 public class KeycloakServiceImpl implements IKeycloakService {
 
     private final RealmResource realmResource;
-    @Value("${keycloak.realm}")
-    private String realm;
-
-    @Value("${keycloak.clientId}")
-    private String clientId;
-
-    @Value("${keycloak.clientSecret}")
-    private String clientSecret;
-
-    @Value("${keycloak.serverUrl}")
-    private String serverUrl;
+    private String realm = "CashCloud_realm";
+    private String clientSecret = "AQCgcVjKkkC38wDILaNnLYtIObFUFbMf";
+    private String serverUrl = "http://localhost:8080/";
+    private String clientId = "api-users-ms";
 
 
     private void sendVerificationEmail(String email){
