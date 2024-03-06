@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserRegistrationPublisher implements IBrokerPublisher<UserEmailDataDto> {
+public class NotifyUserRegistrationPublisher implements IBrokerPublisher<UserEmailDataDto> {
 
     private final RabbitTemplate rabbitTemplate;
 
