@@ -1,6 +1,6 @@
-package com.mateo.usersms.configurations.rabbitmq;
+package com.cashcloud.keycloakmanagerms.configurations.rabbitmq;
 
-import org.springframework.amqp.core.*;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;

@@ -1,4 +1,4 @@
-package com.mateo.usersms.configurations.security;
+package com.cashcloud.keycloakmanagerms.configurations.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,8 +20,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/users/open/**").permitAll()
-                        .anyRequest().authenticated()
+                        //.requestMatchers("/api/users/open/**").permitAll()
+                        .anyRequest().permitAll()
                 )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
