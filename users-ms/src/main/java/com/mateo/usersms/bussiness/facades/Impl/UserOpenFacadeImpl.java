@@ -18,13 +18,14 @@ public class UserOpenFacadeImpl implements IUserOpenFacade {
     private final IUserMapper<SaveUserDto> userMapper;
     private final IAliasGeneratorService aliasGeneratorService;
     private final ICvuGeneratorService cvuGeneratorService;
-    private final IBrokerPublisher<UserEmailDataDto> brokerPublisher;
+    private final IBrokerPublisher<UserEmailDataDto> emailDataDtoIBrokerPublisher;
     private final IKeycloakAuthService keycloakAuthService;
+    private final IBrokerPublisher<UserDataToRegisterInKeycloak> toRegisterInKeycloakIBrokerPublisher;
     @Override
     public UserRegistrationResponseDto registerUser(SaveUserDto saveUserDto) {
 
         //save user on IAM (keycloak)
-        keycloakAuthService.registerNewUserOnKeycloak(saveUserDto);
+        //keycloakAuthService.registerNewUserOnKeycloak(saveUserDto);
 
         var user = userMapper.toUser(saveUserDto);
 
@@ -41,11 +42,18 @@ public class UserOpenFacadeImpl implements IUserOpenFacade {
         var userId = userService.saveUser(user);
 
         //publish event on rabbit with user data
-        brokerPublisher.publish(new UserEmailDataDto(
+        emailDataDtoIBrokerPublisher.publish(new UserEmailDataDto(
                 saveUserDto.firstName(),
                 saveUserDto.lastName(),
                 saveUserDto.email())
         );
+        toRegisterInKeycloakIBrokerPublisher.publish(new UserDataToRegisterInKeycloak(
+                userId,
+                saveUserDto.firstName(),
+                saveUserDto.lastName(),
+                saveUserDto.email(),
+                saveUserDto.password()
+        ));
 
         var response = new UserRegistrationResponseDto(
                 userId,
