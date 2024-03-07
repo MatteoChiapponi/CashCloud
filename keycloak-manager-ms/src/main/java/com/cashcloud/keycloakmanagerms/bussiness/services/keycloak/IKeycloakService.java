@@ -6,7 +6,7 @@ import com.cashcloud.keycloakmanagerms.bussiness.dtos.UserDataToRegisterInKeyclo
 
 public interface IKeycloakService {
     void logoutUserFromKeycloak(String userId);
-    void registerNewUserOnKeycloak(UserDataToRegisterInKeycloak userData);
+    String registerNewUserOnKeycloak(UserDataToRegisterInKeycloak userData);
     UserAuthenticatedResponseDto authenticateUser(UserAuthenticationRequestDto userAuthenticationRequestDto);
 
 }

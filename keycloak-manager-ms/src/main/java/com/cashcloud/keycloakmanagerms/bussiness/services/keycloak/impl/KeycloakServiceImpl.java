@@ -10,10 +10,10 @@ import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 @RequiredArgsConstructor
@@ -26,17 +26,22 @@ public class KeycloakServiceImpl implements IKeycloakService {
     private String clientId = "api-users-ms";
 
 
-    private void sendVerificationEmail(String email){
+    private String sendVerificationEmail(String email){
         var users = realmResource.users().searchByEmail(email,true);
+        AtomicReference<String> idGeneratedByKeycloak = new AtomicReference<>();
         users.stream().findFirst().ifPresentOrElse(
                 user -> {
-                    if (!user.isEmailVerified())
+                    if (!user.isEmailVerified()){
+                        idGeneratedByKeycloak.set(user.getId());
                         realmResource.users().get(user.getId()).sendVerifyEmail();
+                    }
+
                 },
                 () -> {
                     throw new RuntimeException("user not found");
                 }
         );
+        return idGeneratedByKeycloak.get();
     }
 
     @Override
@@ -45,7 +50,7 @@ public class KeycloakServiceImpl implements IKeycloakService {
     }
 
     @Override
-    public void registerNewUserOnKeycloak(UserDataToRegisterInKeycloak userData) {
+    public String registerNewUserOnKeycloak(UserDataToRegisterInKeycloak userData) {
         UserRepresentation userRepresentation = new UserRepresentation();
         userRepresentation.setEnabled(true);
         userRepresentation.setUsername(userData.email());
@@ -71,8 +76,7 @@ public class KeycloakServiceImpl implements IKeycloakService {
         // manejar exceptions
         System.out.println(response.getStatus());
 
-        sendVerificationEmail(userData.email());
-
+        return sendVerificationEmail(userData.email());
     }
 
     @Override

@@ -22,7 +22,8 @@ public class registerUserOnKeycloakConsumer implements IBrokerConsumer<UserDataT
     @RabbitListener(queues = "register_user_on_keycloak")
     public void consume(@Payload UserDataToRegisterInKeycloak message) {
         logger.info("nuevo usuario para registrar: "+ message.email() + message.firstName() + message.lastName());
-        keycloakService.registerNewUserOnKeycloak(message);
+        var userIdGeneratedByKeycloak = keycloakService.registerNewUserOnKeycloak(message);
+
     }
 
 
