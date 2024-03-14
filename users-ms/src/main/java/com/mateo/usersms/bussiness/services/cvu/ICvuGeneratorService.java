@@ -1,4 +1,4 @@
-package com.mateo.usersms.bussiness.services.users.cvu;
+package com.mateo.usersms.bussiness.services.cvu;
 
 public interface ICvuGeneratorService {
     String generateCvu();

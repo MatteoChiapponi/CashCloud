@@ -1,7 +1,7 @@
-package com.mateo.usersms.bussiness.services.users.alias.Impl;
+package com.mateo.usersms.bussiness.services.alias.Impl;
 
+import com.mateo.usersms.bussiness.services.alias.IAliasGeneratorService;
 import com.mateo.usersms.bussiness.services.users.IUserValidationService;
-import com.mateo.usersms.bussiness.services.users.alias.IAliasGeneratorService;
 import com.mateo.usersms.utils.IRandomWordGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

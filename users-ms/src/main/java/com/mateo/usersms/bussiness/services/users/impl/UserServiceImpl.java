@@ -14,7 +14,6 @@ public class UserServiceImpl implements IUserService {
 
     private final IUserRepository userRepository;
 
-
     public User loadUserByUsername(String email) {
         var userOptional = userRepository.findByEmail(email);
         if (userOptional.isPresent())
@@ -23,9 +22,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Long saveUser(User user) {
-        var response = userRepository.save(user);
-        return response.getId();
+    public void saveUser(User user) {
+        userRepository.save(user);
     }
 
     @Override

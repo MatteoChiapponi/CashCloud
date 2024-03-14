@@ -1,7 +1,7 @@
-package com.mateo.usersms.bussiness.services.users.cvu.impl;
+package com.mateo.usersms.bussiness.services.cvu.impl;
 
+import com.mateo.usersms.bussiness.services.cvu.ICvuGeneratorService;
 import com.mateo.usersms.bussiness.services.users.IUserValidationService;
-import com.mateo.usersms.bussiness.services.users.cvu.ICvuGeneratorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
