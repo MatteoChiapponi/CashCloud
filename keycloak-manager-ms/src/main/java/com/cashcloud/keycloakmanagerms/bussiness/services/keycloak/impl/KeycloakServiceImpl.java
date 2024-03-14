@@ -1,8 +1,8 @@
 package com.cashcloud.keycloakmanagerms.bussiness.services.keycloak.impl;
 
-import com.cashcloud.keycloakmanagerms.bussiness.dtos.UserAuthenticatedResponseDto;
-import com.cashcloud.keycloakmanagerms.bussiness.dtos.UserAuthenticationRequestDto;
-import com.cashcloud.keycloakmanagerms.bussiness.dtos.UserDataToRegisterInKeycloak;
+import com.cashcloud.keycloakmanagerms.bussiness.dtos.requests.RegisterUserRequestDto;
+import com.cashcloud.keycloakmanagerms.bussiness.dtos.response.UserAuthenticatedResponseDto;
+import com.cashcloud.keycloakmanagerms.bussiness.dtos.requests.UserAuthenticationRequestDto;
 import com.cashcloud.keycloakmanagerms.bussiness.services.keycloak.IKeycloakService;
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
@@ -50,7 +50,7 @@ public class KeycloakServiceImpl implements IKeycloakService {
     }
 
     @Override
-    public String registerNewUserOnKeycloak(UserDataToRegisterInKeycloak userData) {
+    public String registerNewUserOnKeycloak(RegisterUserRequestDto userData) {
         UserRepresentation userRepresentation = new UserRepresentation();
         userRepresentation.setEnabled(true);
         userRepresentation.setUsername(userData.email());
