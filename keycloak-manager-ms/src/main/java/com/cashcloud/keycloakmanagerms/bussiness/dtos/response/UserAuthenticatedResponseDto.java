@@ -1,4 +1,4 @@
-package com.mateo.usersms.model.dtos;
+package com.cashcloud.keycloakmanagerms.bussiness.dtos.response;
 
 public record UserAuthenticatedResponseDto(
         String accessToken,

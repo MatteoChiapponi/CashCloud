@@ -15,9 +15,9 @@ public class SecurityConfiguration {
         http.authorizeExchange(
                 authorizeExchangeSpec ->
                                 authorizeExchangeSpec.pathMatchers("/api/users/open/**").permitAll()
+                                        .pathMatchers("/api/keycloak/open/**").permitAll()
                                         .pathMatchers("/actuator/**").permitAll()
                                         .anyExchange().authenticated()
-
                         )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt
