@@ -1,4 +1,4 @@
-package com.cashcloud.keycloakmanagerms.bussiness.dtos.events;
+package com.mateo.notificationsms.dtos.events;
 
 public record NewUserRegisteredData(
         String userIdGeneratedByKeycloak,

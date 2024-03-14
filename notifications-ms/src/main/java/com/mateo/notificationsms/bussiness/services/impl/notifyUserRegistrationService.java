@@ -2,7 +2,7 @@ package com.mateo.notificationsms.bussiness.services.impl;
 
 import com.mateo.notificationsms.bussiness.services.IMailSenderService;
 import com.mateo.notificationsms.bussiness.services.INotifyService;
-import com.mateo.notificationsms.dtos.UserEmailDataDto;
+import com.mateo.notificationsms.dtos.events.NewUserRegisteredData;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMultipart;
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class notifyUserRegistrationService implements INotifyService<UserEmailDataDto> {
+public class notifyUserRegistrationService implements INotifyService<NewUserRegisteredData> {
 
     private final IMailSenderService<MimeMultipart> mailSenderService;
     @Override
-    public void notify(UserEmailDataDto message) {
+    public void notify(NewUserRegisteredData message) {
         MimeMultipart content = new MimeMultipart("related");
         var body = "<html>" +
                     "<body style='font-family: 'Poppins', sans-serif; background-color: rgb(234, 234, 234); display: flex; justify-content: center; margin: 0px;'>" +
