@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9630378d-a80d-4540-9d54-09ced8c5856e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/configuration-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/src/main/java/com/mateo/configurationserver/ConfigurationServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-server/src/test/java/com/mateo/configurationserver/ConfigurationServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/mateo/eurekaserver/EurekaServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/test/java/com/mateo/eurekaserver/EurekaServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/mateo/gateway/GatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/mateo/gateway/configuration/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/mateo/gateway/filters/CustomFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/test/java/com/mateo/gateway/GatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/KeycloakManagerMsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/dtos/events/NewUserRegisteredData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/dtos/requests/RegisterUserRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/dtos/requests/UserAuthenticationRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/dtos/response/UserAuthenticatedResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/dtos/response/UserRegistrationResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/facades/IOpenEndpointsFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/facades/impl/OpenEndpointsFacadeImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/services/broker_consumers/IBrokerConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/services/broker_pusblishers/IBrokerPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/services/broker_pusblishers/impl/NewUserRegisteredOnKeycloak.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/services/keycloak/IKeycloakService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/bussiness/services/keycloak/impl/KeycloakServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/configurations/keycloak/KeycloakConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/configurations/rabbitmq/RabbitMQConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/configurations/security/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/java/com/cashcloud/keycloakmanagerms/controllers/KeycloakOpenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak-manager-ms/src/test/java/com/cashcloud/keycloakmanagerms/KeycloakManagerMsApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/NotificationsMsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/bussiness/broker_consumers/IBrokerConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/bussiness/broker_consumers/impl/NotifyUserRegistrationConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/bussiness/services/IMailSenderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/bussiness/services/INotifyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/bussiness/services/impl/newUserRegistrationEmailSenderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/bussiness/services/impl/notifyUserRegistrationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/configurations/RabbitMQConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/dtos/UserEmailDataDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/java/com/mateo/notificationsms/dtos/events/NewUserRegisteredData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications-ms/src/test/java/com/mateo/notificationsms/NotificationsMsApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/README.Docker.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/UsersMsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/broker_consumers/IBrokerConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/broker_consumers/impl/NewUserRegisteredOnKeycloakConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/broker_pusblishers/IBrokerPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/facades/IUserCloseFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/facades/IUserOpenFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/facades/Impl/UserCloseFacadeImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/facades/Impl/UserOpenFacadeImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/mappers/IUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/mappers/impl/UserMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/alias/IAliasGeneratorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/alias/Impl/AliasGeneratorServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/cvu/ICvuGeneratorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/cvu/impl/CvuGeneratorServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/users/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/users/IUserValidationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/users/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/bussiness/services/users/impl/UserValidationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/configurations/AppBeansConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/configurations/rabbitmq/RabbitMQConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/configurations/security/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/dtos/UserEmailDataDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/dtos/events/NewUserRegisteredData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/persistence/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/persistence/entities/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/persistence/repositories/IUserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/presentation/advice/GlobalHandlerExceptions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/presentation/controllers/UsersCloseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/presentation/controllers/UsersOpenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/utils/IRandomWordGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/java/com/mateo/usersms/utils/WordReaderUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/test/java/com/mateo/usersms/UsersMsApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/test/java/com/mateo/usersms/services/users/alias/AliasGeneratorServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/test/java/com/mateo/usersms/services/users/cvu/CvuGeneratorServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/src/test/java/com/mateo/usersms/utils/WordReaderUtilTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-ms/words.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2dh79LM8SfDCarvRusomOTyjHDU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/matteo/Desktop/CashCloud/microservices/users-ms"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9630378d-a80d-4540-9d54-09ced8c5856e" name="Changes" comment="" />
+      <created>1710448308501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710448308501</updated>
+    </task>
+    <servers />
+  </component>
+</project>
