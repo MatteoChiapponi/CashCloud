@@ -1,7 +1,7 @@
-package com.cashcloud.accountsms.accounts.infrastructure.broker_consumers.impl;
+package com.cashcloud.accountsms.accounts.infrastructure.adapters.broker_consumers;
 
 import com.cashcloud.accountsms.accounts.application.save.CreateAccount;
-import com.cashcloud.accountsms.accounts.infrastructure.broker_consumers.IBrokerConsumer;
+import com.cashcloud.accountsms.accounts.domain.ports.ConsumeUserRegistrationEvent;
 import com.cashcloud.accountsms.accounts.infrastructure.dtos.events.NewUserRegisteredData;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateUserAccountConsumer implements IBrokerConsumer<NewUserRegisteredData> {
+public class ConsumeUserRegistrationEventUsingRabbit implements ConsumeUserRegistrationEvent {
     private final CreateAccount createAccount;
-    Logger logger = LoggerFactory.getLogger(CreateUserAccountConsumer.class);
+    Logger logger = LoggerFactory.getLogger(ConsumeUserRegistrationEventUsingRabbit.class);
 
     @Override
     @RabbitListener(queues = "generate-user-account")
-    public void consume(@Payload NewUserRegisteredData message) {
+    public void consumeUserRegistration(@Payload NewUserRegisteredData message) {
         logger.info("generando cuenta al nuevo usuario registrado: "+ message.email() + message.firstName() + message.lastName());
         createAccount.createAndSaveAccount(message);
     }
