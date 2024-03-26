@@ -8,8 +8,10 @@ import com.cashcloud.accountsms.alias.domain.ports.GenerateAlias;
 import com.cashcloud.accountsms.cvu.domain.Cvu;
 import com.cashcloud.accountsms.cvu.domain.ports.GenerateCvu;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
+@Component
 public class CreateAccount {
 
     private final SaveAccountRepository saveAccountRepository;

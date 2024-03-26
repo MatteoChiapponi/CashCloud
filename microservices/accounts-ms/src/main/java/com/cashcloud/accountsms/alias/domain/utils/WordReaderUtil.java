@@ -1,5 +1,7 @@
 package com.cashcloud.accountsms.alias.domain.utils;
 
+import org.springframework.stereotype.Component;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Component
 public class WordReaderUtil implements IRandomWordGenerator {
     public static final String wordsFilePath = "words.txt";
     private static WordReaderUtil instance;
