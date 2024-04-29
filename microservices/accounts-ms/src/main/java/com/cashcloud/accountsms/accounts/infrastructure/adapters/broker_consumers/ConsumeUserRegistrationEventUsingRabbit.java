@@ -1,7 +1,7 @@
 package com.cashcloud.accountsms.accounts.infrastructure.adapters.broker_consumers;
 
 import com.cashcloud.accountsms.accounts.application.save.CreateAccount;
-import com.cashcloud.accountsms.accounts.domain.ports.ConsumeUserRegistrationEvent;
+import com.cashcloud.accountsms.accounts.domain.ports.consume_events.ConsumeUserRegistrationEvent;
 import com.cashcloud.accountsms.accounts.infrastructure.dtos.events.NewUserRegisteredData;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

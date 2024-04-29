@@ -1,4 +1,4 @@
-package com.cashcloud.accountsms.accounts.domain.ports;
+package com.cashcloud.accountsms.accounts.domain.ports.consume_events;
 
 import com.cashcloud.accountsms.accounts.infrastructure.dtos.events.NewUserRegisteredData;
 

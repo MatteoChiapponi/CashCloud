@@ -3,7 +3,9 @@ package com.cashcloud.accountsms.accounts.domain;
 
 import com.cashcloud.accountsms.alias.domain.Alias;
 import com.cashcloud.accountsms.cvu.domain.Cvu;
+import lombok.Getter;
 
+@Getter
 public class Account {
 
     private String userId;

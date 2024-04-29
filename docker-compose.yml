@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  eureka-server:
+    build: /components/eureka-server
+    ports:
+      - 8761:8761
+  configuration-server:
+    build: /components/configuration-server
+    ports:
+      - 8888:8888
+  gateway-service:
+    build: /components/gateway-service
+    ports:
+      - 9090:9090
+    depends_on:
+      - eureka-server
+      - configuration-server
+  users-service:
+    build: /microservices/users-ms
+    ports:
+      - 8081:8081
+    depends_on:
+      - eureka-server
+      - configuration-server
+  notifications-service:
+    build: /microservices/notifications-ms
+    ports:
+      - 8082:8082
+    depends_on:
+      - eureka-server
+      - configuration-server
+  keycloak-manager-service:
+    build: /microservices/keycloak-manager-ms
+    ports:
+      - 8083:8083
+    depends_on:
+      - eureka-server
+      - configuration-server
+  accounts-service:
+    build: /microservices/accounts-ms
+    ports:
+      - 8084:8084
+    depends_on:
+      - eureka-server
+      - configuration-server

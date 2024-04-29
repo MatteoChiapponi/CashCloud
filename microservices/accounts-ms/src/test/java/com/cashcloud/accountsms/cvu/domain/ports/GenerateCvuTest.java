@@ -1,18 +1,21 @@
-package com.cashcloud.accountsms.cvu;
+package com.cashcloud.accountsms.cvu.domain.ports;
 
-import com.cashcloud.accountsms.cvu.domain.service.GenerateCvuService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
-class GenerateCvuServiceTest {
+class GenerateCvuTest {
+
     @Autowired
-    private GenerateCvuService cvuGeneratorService;
+    private GenerateCvu cvuGeneratorService;
 
     @Test
     void testCvu (){
         System.out.println(cvuGeneratorService.generateCvu());
     }
+
 
 }

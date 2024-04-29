@@ -1,14 +1,18 @@
 package com.cashcloud.accountsms.utils;
 
-import com.cashcloud.accountsms.alias.domain.utils.IRandomWordGenerator;
 import com.cashcloud.accountsms.alias.domain.utils.WordReaderUtil;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class WordReaderUtilTest {
-    private final IRandomWordGenerator randomWordGenerator = WordReaderUtil.getInstance();
+
+    @Autowired
+    private WordReaderUtil wordReaderUtil;
 
     @Test
     void randomWord() {
-        System.out.println(randomWordGenerator.generateRandomWord());
+        System.out.println(wordReaderUtil.generateRandomWord());
     }
 }

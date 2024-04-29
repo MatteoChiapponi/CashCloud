@@ -1,6 +1,5 @@
 package com.mateo.usersms.presentation.controllers;
 
-import com.mateo.usersms.bussiness.facades.IUserCloseFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -11,12 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UsersCloseController {
 
-    private final IUserCloseFacade userCloseFacade;
-
     @PostMapping("/logout")
     public ResponseEntity userLogout(){
         var userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        userCloseFacade.logoutUser(userId);
         return ResponseEntity.ok().build();
     }
 
